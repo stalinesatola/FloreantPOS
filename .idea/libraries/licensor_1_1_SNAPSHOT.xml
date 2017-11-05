@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="licensor-1.1-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/local-lib/com/oro/licensor/1.1-SNAPSHOT/licensor-1.1-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

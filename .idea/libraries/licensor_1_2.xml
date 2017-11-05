@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="licensor-1.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/local-lib/com/oro/licensor/1.2/licensor-1.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

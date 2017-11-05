@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="posdb">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/database/derby-server/posdb.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

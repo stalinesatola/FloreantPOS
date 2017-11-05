@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="floreantpos">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/floreantpos-bin/floreantpos/floreantpos.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

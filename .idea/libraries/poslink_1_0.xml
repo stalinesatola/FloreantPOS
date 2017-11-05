@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="poslink-1.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/local-lib/com/pax/poslink/poslink/1.0/poslink-1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

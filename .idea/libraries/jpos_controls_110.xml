@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jpos-controls-110">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/local-lib/jpos/jpos-controls/110/jpos-controls-110.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.floreantpos.model">
+  <class lazy="false" name="TicketTax" table="TICKET_TAX">
+    <id column="ID" name="id" type="java.lang.Integer">
+      <generator class="identity"/>
+    </id>
+    <property column="NAME" generated="never" lazy="false" name="name" type="java.lang.String"/>
+  	<property column="RATE" generated="never" lazy="false" name="rate" type="java.lang.Double"/>
+    <property column="AMOUNT" name="amount" type="java.lang.Double"/>
+    <!--property name="amount" column="AMOUNT" type="java.lang.Double"></property-->
+    <many-to-one class="com.floreantpos.model.Ticket" lazy="false" name="ticket">
+			<column name="TICKET_ID" />
+	</many-to-one>
+  </class>
+</hibernate-mapping>
