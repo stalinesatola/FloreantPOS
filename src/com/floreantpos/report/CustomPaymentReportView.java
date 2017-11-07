@@ -35,7 +35,7 @@ import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.data.JRTableModelDataSource;
-import net.sf.jasperreports.view.JasperViewer;
+import net.sf.jasperreports.swing.JRViewer;
 
 import org.jdesktop.swingx.JXDatePicker;
 
@@ -128,7 +128,7 @@ public class CustomPaymentReportView extends JPanel {
 
 		JasperReport jasperReport = ReportUtil.getReport("custom-payment-report"); //$NON-NLS-1$
 		JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, map, new JRTableModelDataSource(new CustomPaymentReportModel(transactions)));
-		JasperViewer viewer = new JasperViewer(jasperPrint);
+		JRViewer viewer = new JRViewer(jasperPrint);
 		reportContainer.removeAll();
 		reportContainer.add(viewer);
 		reportContainer.revalidate();

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.pax:poslink:20161230">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/pax/poslink/20161230/poslink-20161230.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/pax/poslink/20161230/poslink-20161230-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/pax/poslink/20161230/poslink-20161230-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

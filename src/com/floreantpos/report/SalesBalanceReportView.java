@@ -39,7 +39,7 @@ import net.sf.jasperreports.engine.JREmptyDataSource;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.view.JasperViewer;
+import net.sf.jasperreports.swing.JRViewer;
 
 import org.apache.log4j.Logger;
 import org.jdesktop.swingx.JXDatePicker;
@@ -189,7 +189,7 @@ public class SalesBalanceReportView extends JPanel {
 
 		JasperReport jasperReport = ReportUtil.getReport("sales_summary_balance_report"); //$NON-NLS-1$
 		JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, map, new JREmptyDataSource());
-		JasperViewer viewer = new JasperViewer(jasperPrint);
+		JRViewer viewer = new JRViewer(jasperPrint);
 		reportContainer.removeAll();
 		reportContainer.add(viewer);
 		reportContainer.revalidate();

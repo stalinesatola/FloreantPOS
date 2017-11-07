@@ -1,6 +1,10 @@
 package com.floreantpos.model.base;
 
 import java.lang.Comparable;
+import java.util.List;
+
+import com.floreantpos.model.TicketTax;
+
 import java.io.Serializable;
 
 
@@ -886,7 +890,17 @@ public abstract class BaseTicket  implements Comparable, Serializable {
 	}
 	
 	public void addToTicketTax (com.floreantpos.model.TicketTax ticketTax){
-		if (null == getTicketTaxes()) setTicketTaxes(new java.util.ArrayList<com.floreantpos.model.TicketTax>());
+		if (null == getTicketTaxes()){
+			setTicketTaxes(new java.util.ArrayList<com.floreantpos.model.TicketTax>());
+			getTicketTaxes().add(ticketTax);
+			return;
+		}
+		for (int i=0; i< getTicketTaxes().size();i++){
+			if (getTicketTaxes().get(i).getName() == ticketTax.getName()){
+				getTicketTaxes().set(i, ticketTax);
+				return;
+			}
+		}
 		getTicketTaxes().add(ticketTax);
 	}
 

@@ -44,7 +44,7 @@ import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.data.JRTableModelDataSource;
-import net.sf.jasperreports.view.JasperViewer;
+import net.sf.jasperreports.swing.JRViewer;
 
 import org.jdesktop.swingx.JXDatePicker;
 
@@ -306,7 +306,7 @@ public class HourlyLaborReportView extends TransparentPanel {
 
 			JasperPrint print = JasperFillManager.fillReport(report, properties, new JREmptyDataSource());
 
-			JasperViewer viewer = new JasperViewer(print);
+			JRViewer viewer = new JRViewer(print);
 			reportPanel.removeAll();
 			reportPanel.add(viewer);
 			reportPanel.revalidate();

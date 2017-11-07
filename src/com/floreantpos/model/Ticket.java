@@ -465,7 +465,7 @@ public class Ticket extends BaseTicket {
 	}
 	
 	private void calculateTicketTax(java.util.List<TicketItem> ticketItems){
-		if (null != getTicketTaxes()) setTicketTaxes(null);
+		//if (null != getTicketTaxes()) setTicketTaxes(null);
 		java.util.HashMap<java.lang.String, TicketTax> ticketTaxMap= 
 				new java.util.HashMap<java.lang.String, TicketTax>() ;
 		for (TicketItem ticketItem : ticketItems) {
