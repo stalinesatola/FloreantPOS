@@ -419,6 +419,7 @@ public class TicketItem extends BaseTicketItem implements ITicketItem {
 		setDiscountAmount(NumberUtil.roundToTwoDigit(calculateDiscount()));
 		setTaxAmount(NumberUtil.roundToTwoDigit(calculateTax(true)));
 		setTaxAmountWithoutModifiers(NumberUtil.roundToTwoDigit(calculateTax(false)));
+		setTaxAmountPerItem();
 		setTotalAmount(NumberUtil.roundToTwoDigit(calculateTotal(true)));
 		setTotalAmountWithoutModifiers(NumberUtil.roundToTwoDigit(calculateTotal(false)));
 	}

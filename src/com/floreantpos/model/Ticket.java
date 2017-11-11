@@ -465,30 +465,19 @@ public class Ticket extends BaseTicket {
 	}
 	
 	private void calculateTicketTax(java.util.List<TicketItem> ticketItems){
-		//if (null != getTicketTaxes()) setTicketTaxes(null);
-		java.util.HashMap<java.lang.String, TicketTax> ticketTaxMap= 
-				new java.util.HashMap<java.lang.String, TicketTax>() ;
+		if (null != getTicketTaxes()) deleteTicketTaxes();
 		for (TicketItem ticketItem : ticketItems) {
-			for (TicketItemTax ticketItemTax : ticketItem.getTaxes()){
-				if (ticketTaxMap.containsKey(ticketItemTax.getName())){
-					TicketTax tempTicketTax = ticketTaxMap.get(ticketItemTax.getName());
-					tempTicketTax.setAmount(tempTicketTax.getAmount()+ticketItemTax.getAmount());
-					ticketTaxMap.put(ticketItemTax.getName(), tempTicketTax);
-				}
-				else{
-					TicketTax tempTicketTax = new TicketTax();
-					tempTicketTax.setAmount(ticketItemTax.getAmount());
-					tempTicketTax.setName(ticketItemTax.getName());
-					tempTicketTax.setRate(ticketItemTax.getRate());
-					tempTicketTax.setTicket(this);
-					ticketTaxMap.put(ticketItemTax.getName(), tempTicketTax);
-				}
-			};
+			if (null != ticketItem){
+				for (TicketItemTax ticketItemTax : ticketItem.getTaxes()){
+						TicketTax tempTicketTax = new TicketTax();
+						tempTicketTax.setAmount(ticketItemTax.getAmount());
+						tempTicketTax.setName(ticketItemTax.getName());
+						tempTicketTax.setRate(ticketItemTax.getRate());
+						tempTicketTax.setTicket(this);
+						addToTicketTax(tempTicketTax);;	
+				};
+			}
 		}
-		for (Map.Entry<java.lang.String, TicketTax> ticketTaxSet : ticketTaxMap.entrySet()){
-		 addToTicketTax(ticketTaxSet.getValue());;	
-		};
-		
 	}
 
 	private double fixInvalidAmount(double tax) {

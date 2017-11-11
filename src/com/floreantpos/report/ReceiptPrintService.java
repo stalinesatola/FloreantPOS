@@ -61,6 +61,7 @@ import com.floreantpos.model.RefundTransaction;
 import com.floreantpos.model.Restaurant;
 import com.floreantpos.model.TerminalPrinters;
 import com.floreantpos.model.Ticket;
+import com.floreantpos.model.TicketTax;
 import com.floreantpos.model.User;
 import com.floreantpos.model.VirtualPrinter;
 import com.floreantpos.model.dao.KitchenTicketDAO;
@@ -398,10 +399,22 @@ public class ReceiptPrintService {
 		map.put("tenderedAmountText", POSConstants.RECEIPT_REPORT_TENDERED_AMOUNT_LABEL + " " + currencySymbol); //$NON-NLS-1$
 		map.put(DISCOUNT_TEXT, POSConstants.RECEIPT_REPORT_DISCOUNT_LABEL + " " + currencySymbol); //$NON-NLS-1$
 		map.put(TAX_TEXT, POSConstants.RECEIPT_REPORT_TAX_LABEL + " " + currencySymbol); //$NON-NLS-1$
-		map.put("taxCGSTText", "CGST (6%):"); //$NON-NLS-1$
-		map.put("taxSGSTText", "SGST (6%):"); //$NON-NLS-1$
-		map.put("taxAmountCGST", "0.60");
-		map.put("taxAmountSGST", "0.60");		
+		//populating taxes in ticket to be printed
+		for(final TicketTax ticketTax: ticket.getTicketTaxes() ){
+			switch (ticketTax.getName()) {
+			case "CGST" : 
+				map.put("taxCGSTText", ticketTax.getName() + " (" + 
+						ticketTax.getRate().toString() + "%)" );
+				map.put("taxAmountCGST", NumberUtil.formatNumber(ticketTax.getAmount()));
+				break;
+			case "SGST":
+				map.put("taxSGSTText", ticketTax.getName() + " (" + 
+						ticketTax.getRate().toString() + "%)" );
+				map.put("taxAmountSGST", NumberUtil.formatNumber(ticketTax.getAmount()));
+				break;
+			}
+				
+		}	
 		map.put(SERVICE_CHARGE_TEXT, POSConstants.RECEIPT_REPORT_SERVICE_CHARGE_LABEL + " " + currencySymbol); //$NON-NLS-1$
 		map.put(DELIVERY_CHARGE_TEXT, POSConstants.RECEIPT_REPORT_DELIVERY_CHARGE_LABEL + " " + currencySymbol); //$NON-NLS-1$
 		map.put(TIPS_TEXT, POSConstants.RECEIPT_REPORT_TIPS_LABEL + " " + currencySymbol); //$NON-NLS-1$

@@ -4,6 +4,7 @@ import java.lang.Comparable;
 import java.util.List;
 
 import com.floreantpos.model.TicketTax;
+import com.floreantpos.util.NumberUtil;
 
 import java.io.Serializable;
 
@@ -883,6 +884,9 @@ public abstract class BaseTicket  implements Comparable, Serializable {
 	public void setTicketTaxes(java.util.List<com.floreantpos.model.TicketTax> ticketTaxes) {
 		this.ticketTaxes = ticketTaxes;
 	}
+	public void deleteTicketTaxes(){
+		ticketTaxes.clear();
+	}
 
 	public void addTodiscounts (com.floreantpos.model.TicketDiscount ticketDiscount) {
 		if (null == getDiscounts()) setDiscounts(new java.util.ArrayList<com.floreantpos.model.TicketDiscount>());
@@ -890,13 +894,15 @@ public abstract class BaseTicket  implements Comparable, Serializable {
 	}
 	
 	public void addToTicketTax (com.floreantpos.model.TicketTax ticketTax){
-		if (null == getTicketTaxes()){
+		if (null==getTicketTaxes()){
 			setTicketTaxes(new java.util.ArrayList<com.floreantpos.model.TicketTax>());
 			getTicketTaxes().add(ticketTax);
 			return;
 		}
 		for (int i=0; i< getTicketTaxes().size();i++){
-			if (getTicketTaxes().get(i).getName() == ticketTax.getName()){
+			if (getTicketTaxes().get(i).getName().equals(ticketTax.getName())){
+				ticketTax.amount += getTicketTaxes().get(i).amount;
+				ticketTax.amount = NumberUtil.roundToTwoDigit(ticketTax.amount);
 				getTicketTaxes().set(i, ticketTax);
 				return;
 			}

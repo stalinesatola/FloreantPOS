@@ -6,6 +6,7 @@ import java.io.Serializable;
 import com.floreantpos.model.TicketItem;
 import com.floreantpos.model.TicketItemCookingInstruction;
 import com.floreantpos.model.TicketItemTax;
+import com.floreantpos.util.NumberUtil;
 
 
 /**
@@ -761,16 +762,14 @@ public abstract class BaseTicketItem  implements Comparable, Serializable {
 		this.taxes = taxes;
 	}
 	
-	/*public void setTaxAmountPerLine() {
+	public void setTaxAmountPerItem() {
 		if (null == this.taxes) setTaxes(new java.util.ArrayList<TicketItemTax>());
 		for(TicketItemTax ticketItemTax: this.taxes){
-			TicketItem itemInTicket = ticketItemTax.getTicketItem();
-			java.lang.Integer itemCount = itemInTicket.itemCount;
-			java.lang.Double itemSubtotal = itemInTicket.getSubtotalAmount();
-			java.lang.Double taxAmount = Math.floor((itemSubtotal/itemCount))*(ticketItemTax.getRate()/100)*itemCount;
+			java.lang.Double itemSubtotal = getSubtotalAmount();
+			java.lang.Double taxAmount = NumberUtil.roundToTwoDigit(Math.floor((itemSubtotal/itemCount))*(ticketItemTax.getRate()/100)*itemCount);
 			ticketItemTax.setAmount(taxAmount);
 		}
-	}*/
+	}
 	
 	public void addToTaxes(com.floreantpos.model.TicketItemTax ticketItemTax){
 		if (null == getTaxes()) setTaxes(new java.util.ArrayList<com.floreantpos.model.TicketItemTax>());
