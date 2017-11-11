@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TicketReceiptReport" pageWidth="226" pageHeight="360" whenNoDataType="BlankPage" columnWidth="198" leftMargin="14" rightMargin="14" topMargin="5" bottomMargin="5" isFloatColumnFooter="true" uuid="d7b4d691-53f2-4bf1-9c5a-b7d9a165b701">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TicketReceiptReport" pageWidth="226" pageHeight="720" whenNoDataType="BlankPage" columnWidth="198" leftMargin="14" rightMargin="14" topMargin="5" bottomMargin="5" isFloatColumnFooter="true" uuid="d7b4d691-53f2-4bf1-9c5a-b7d9a165b701">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.5"/>
@@ -414,7 +414,7 @@
 				<textFieldExpression><![CDATA[$P{subTotalText}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="staticText-7" x="32" y="96" width="114" height="13" isRemoveLineWhenBlank="true" uuid="a182d18d-da74-4540-841b-cdf0fab36530"/>
+				<reportElement key="staticText-7" x="32" y="94" width="114" height="13" isRemoveLineWhenBlank="true" uuid="a182d18d-da74-4540-841b-cdf0fab36530"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
 					<font fontName="Monospaced" size="9"/>
 				</textElement>
@@ -429,7 +429,7 @@
 				</graphicElement>
 			</line>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-1" x="148" y="148" width="50" height="13" isRemoveLineWhenBlank="true" uuid="eb7173bd-fe0b-4e64-8964-f4dddaed88a7">
+				<reportElement key="textField-1" x="148" y="146" width="50" height="13" isRemoveLineWhenBlank="true" uuid="eb7173bd-fe0b-4e64-8964-f4dddaed88a7">
 					<printWhenExpression><![CDATA[$P{dueAmountText}!=null]]></printWhenExpression>
 				</reportElement>
 				<box>
@@ -443,7 +443,7 @@
 				<textFieldExpression><![CDATA[$P{dueAmount}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="staticText-6" x="32" y="62" width="114" height="13" uuid="39bb1ce8-fbb2-4842-8cbd-448d06bfa1a3">
+				<reportElement key="staticText-6" x="32" y="60" width="114" height="13" uuid="39bb1ce8-fbb2-4842-8cbd-448d06bfa1a3">
 					<printWhenExpression><![CDATA[$P{taxAmount}!=null]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
@@ -465,7 +465,7 @@
 				<textFieldExpression><![CDATA[$P{subtotalAmount}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField" x="148" y="96" width="50" height="13" isRemoveLineWhenBlank="true" uuid="ffa24c06-fbc9-4c18-a022-b0aed4eb24f6"/>
+				<reportElement key="textField" x="148" y="94" width="50" height="13" isRemoveLineWhenBlank="true" uuid="ffa24c06-fbc9-4c18-a022-b0aed4eb24f6"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -478,7 +478,7 @@
 				<textFieldExpression><![CDATA[$P{totalAmount}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField" x="148" y="62" width="50" height="13" isRemoveLineWhenBlank="true" uuid="ce02ac79-5e27-4e70-a432-1412babac1ce"/>
+				<reportElement key="textField" x="148" y="60" width="50" height="13" isRemoveLineWhenBlank="true" uuid="ce02ac79-5e27-4e70-a432-1412babac1ce"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -491,7 +491,7 @@
 				<textFieldExpression><![CDATA[$P{taxAmount}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="staticText-9" x="32" y="148" width="114" height="13" isRemoveLineWhenBlank="true" uuid="82c3ad9f-d8ad-4f51-8f31-8553fa0d48f4">
+				<reportElement key="staticText-9" x="32" y="146" width="114" height="13" isRemoveLineWhenBlank="true" uuid="82c3ad9f-d8ad-4f51-8f31-8553fa0d48f4">
 					<printWhenExpression><![CDATA[$P{dueAmountText}!=null]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
@@ -500,7 +500,7 @@
 				<textFieldExpression><![CDATA[$P{dueAmountText}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement key="line-2" x="0" y="93" width="198" height="1" isRemoveLineWhenBlank="true" uuid="5359f4bf-4ebc-4008-8f4d-638982e6c233">
+				<reportElement key="line-2" x="0" y="91" width="198" height="1" isRemoveLineWhenBlank="true" uuid="5359f4bf-4ebc-4008-8f4d-638982e6c233">
 					<printWhenExpression><![CDATA[$P{showFooter}==true]]></printWhenExpression>
 				</reportElement>
 				<graphicElement>
@@ -508,7 +508,7 @@
 				</graphicElement>
 			</line>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField" x="148" y="122" width="50" height="13" isRemoveLineWhenBlank="true" uuid="430f3c94-0655-442e-9890-cc867964e14b"/>
+				<reportElement key="textField" x="148" y="120" width="50" height="13" isRemoveLineWhenBlank="true" uuid="430f3c94-0655-442e-9890-cc867964e14b"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -521,7 +521,7 @@
 				<textFieldExpression><![CDATA[$P{paidAmount}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="staticText-7" x="32" y="122" width="114" height="13" isRemoveLineWhenBlank="true" uuid="53bfbbaa-7f8c-4b50-82b5-6b400a2c3c61"/>
+				<reportElement key="staticText-7" x="32" y="120" width="114" height="13" isRemoveLineWhenBlank="true" uuid="53bfbbaa-7f8c-4b50-82b5-6b400a2c3c61"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
 					<font fontName="Monospaced" size="9"/>
 				</textElement>
@@ -564,7 +564,7 @@
 				<textFieldExpression><![CDATA[$P{footerMessage}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="staticText-8" x="32" y="77" width="114" height="13" isRemoveLineWhenBlank="true" uuid="9296ce0f-de66-4e3e-85f1-235740cd6921">
+				<reportElement key="staticText-8" x="32" y="76" width="114" height="13" isRemoveLineWhenBlank="true" uuid="9296ce0f-de66-4e3e-85f1-235740cd6921">
 					<printWhenExpression><![CDATA[$P{deliveryCharge}!=null]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
@@ -573,7 +573,7 @@
 				<textFieldExpression><![CDATA[$P{deliveryChargeText}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField" isPrintRepeatedValues="false" x="148" y="77" width="50" height="13" isRemoveLineWhenBlank="true" uuid="b0caf091-4272-4578-a0fe-9a14717c4e55"/>
+				<reportElement key="textField" isPrintRepeatedValues="false" x="148" y="76" width="50" height="13" isRemoveLineWhenBlank="true" uuid="b0caf091-4272-4578-a0fe-9a14717c4e55"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -586,7 +586,7 @@
 				<textFieldExpression><![CDATA[$P{deliveryCharge}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="staticText-9" x="32" y="161" width="114" height="13" isRemoveLineWhenBlank="true" uuid="61ca7cd6-b931-4531-a7e9-fcc416d8d2f9">
+				<reportElement key="staticText-9" x="32" y="159" width="114" height="13" isRemoveLineWhenBlank="true" uuid="61ca7cd6-b931-4531-a7e9-fcc416d8d2f9">
 					<printWhenExpression><![CDATA[$P{changedAmount} != null]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
@@ -595,7 +595,7 @@
 				<textFieldExpression><![CDATA[$P{changeAmountText}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField-1" x="148" y="161" width="50" height="13" isRemoveLineWhenBlank="true" uuid="9ca5a51d-8bc7-4615-8fad-2bbcc5550027"/>
+				<reportElement key="textField-1" x="148" y="159" width="50" height="13" isRemoveLineWhenBlank="true" uuid="9ca5a51d-8bc7-4615-8fad-2bbcc5550027"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -655,7 +655,7 @@
 				<text><![CDATA[Total:                              ]]></text>
 			</staticText>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="staticText-7" x="32" y="135" width="114" height="13" isRemoveLineWhenBlank="true" uuid="0a7072ed-a7ff-46d0-9e86-236ab56bf2f7">
+				<reportElement key="staticText-7" x="32" y="133" width="114" height="13" isRemoveLineWhenBlank="true" uuid="0a7072ed-a7ff-46d0-9e86-236ab56bf2f7">
 					<printWhenExpression><![CDATA[$P{adjustAmount}!=null]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
@@ -664,7 +664,7 @@
 				<textFieldExpression><![CDATA[$P{adjustAmountText}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField" x="148" y="135" width="50" height="13" isRemoveLineWhenBlank="true" uuid="946c5371-35b7-4dff-b68d-5ecbcc95b069"/>
+				<reportElement key="textField" x="148" y="133" width="50" height="13" isRemoveLineWhenBlank="true" uuid="946c5371-35b7-4dff-b68d-5ecbcc95b069"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -677,7 +677,7 @@
 				<textFieldExpression><![CDATA[$P{adjustAmount}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField" x="148" y="109" width="50" height="13" isRemoveLineWhenBlank="true" uuid="d3d85389-7082-434d-b255-4fd04e697466">
+				<reportElement key="textField" x="148" y="107" width="50" height="13" isRemoveLineWhenBlank="true" uuid="d3d85389-7082-434d-b255-4fd04e697466">
 					<printWhenExpression><![CDATA[$P{tenderedAmount}!=null]]></printWhenExpression>
 				</reportElement>
 				<box>
@@ -692,7 +692,7 @@
 				<textFieldExpression><![CDATA[$P{tenderedAmount}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="staticText-7" x="32" y="109" width="114" height="13" isRemoveLineWhenBlank="true" uuid="5980c3e3-0608-470d-9a76-536b06fd4a9e">
+				<reportElement key="staticText-7" x="32" y="107" width="114" height="13" isRemoveLineWhenBlank="true" uuid="5980c3e3-0608-470d-9a76-536b06fd4a9e">
 					<printWhenExpression><![CDATA[$P{tenderedAmount}!=null]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
@@ -719,7 +719,7 @@
 				<textFieldExpression><![CDATA[$P{taxCGSTText}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="staticText-6" x="32" y="48" width="114" height="13" uuid="dd7694db-390b-4163-9765-863f6502b6d7">
+				<reportElement key="staticText-6" x="32" y="47" width="114" height="13" uuid="dd7694db-390b-4163-9765-863f6502b6d7">
 					<printWhenExpression><![CDATA[$P{taxAmountSGST}!=null]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
@@ -741,7 +741,7 @@
 				<textFieldExpression><![CDATA[$P{taxAmountCGST}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField" x="148" y="48" width="50" height="13" isRemoveLineWhenBlank="true" uuid="2817695e-5ad9-498b-a382-24dd214c3227"/>
+				<reportElement key="textField" x="148" y="47" width="50" height="13" isRemoveLineWhenBlank="true" uuid="2817695e-5ad9-498b-a382-24dd214c3227"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
