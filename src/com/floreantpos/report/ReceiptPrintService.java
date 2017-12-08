@@ -111,7 +111,7 @@ public class ReceiptPrintService {
 	private static final String CURRENCY_SYMBOL = "currencySymbol"; //$NON-NLS-1$
 	private static Log logger = LogFactory.getLog(ReceiptPrintService.class);
 
-	private static final SimpleDateFormat reportDateFormat = new SimpleDateFormat("M/d/yy, h:mm a"); //$NON-NLS-1$
+	private static final SimpleDateFormat reportDateFormat = new SimpleDateFormat("dd/MM/yy, h:mm a"); //$NON-NLS-1$
 
 	public static final String CUSTOMER_COPY = "Customer Copy";
 	public static final String DRIVER_COPY = "Driver Copy";
@@ -575,35 +575,38 @@ public class ReceiptPrintService {
 		endRow(ticketHeaderBuilder);
 
 		beginRow(ticketHeaderBuilder);
-		addColumn(ticketHeaderBuilder, POSConstants.RECEIPT_REPORT_TERMINAL_LABEL + Application.getInstance().getTerminal().getId());
-		endRow(ticketHeaderBuilder);
-
-		beginRow(ticketHeaderBuilder);
 		addColumn(ticketHeaderBuilder, POSConstants.RECEIPT_REPORT_TICKET_NO_LABEL + ticket.getId());
-		endRow(ticketHeaderBuilder);
+		addColumn(ticketHeaderBuilder, " ");
+		addColumn(ticketHeaderBuilder, POSConstants.RECEIPT_REPORT_TERMINAL_LABEL + Application.getInstance().getTerminal().getId());
+		//endRow(ticketHeaderBuilder);
+
+		/*beginRow(ticketHeaderBuilder);
+		addColumn(ticketHeaderBuilder, POSConstants.RECEIPT_REPORT_TICKET_NO_LABEL + ticket.getId());
+		endRow(ticketHeaderBuilder);*/
 
 		OrderType orderType = ticket.getOrderType();
 		if (orderType.isShowTableSelection() || orderType.isShowGuestSelection()) {//fix
-			beginRow(ticketHeaderBuilder);
+			//beginRow(ticketHeaderBuilder);
+			addColumn(ticketHeaderBuilder, " ");
 			addColumn(ticketHeaderBuilder, POSConstants.RECEIPT_REPORT_TABLE_NO_LABEL + ticket.getTableNumbers());
-			endRow(ticketHeaderBuilder);
+			//endRow(ticketHeaderBuilder);
 
-			beginRow(ticketHeaderBuilder);
+			/*beginRow(ticketHeaderBuilder);
 			addColumn(ticketHeaderBuilder, POSConstants.RECEIPT_REPORT_GUEST_NO_LABEL + ticket.getNumberOfGuests());
-			endRow(ticketHeaderBuilder);
+			endRow(ticketHeaderBuilder);*/
 		}
-
+		endRow(ticketHeaderBuilder);
 		beginRow(ticketHeaderBuilder);
 		addColumn(ticketHeaderBuilder, POSConstants.RECEIPT_REPORT_SERVER_LABEL + ticket.getOwner());
 		endRow(ticketHeaderBuilder);
 
 		beginRow(ticketHeaderBuilder);
-		addColumn(ticketHeaderBuilder, POSConstants.RECEIPT_REPORT_DATE_LABEL + reportDateFormat.format(new Date()));
+		addColumn(ticketHeaderBuilder, POSConstants.RECEIPT_REPORT_DATE_LABEL + reportDateFormat.format(ticket.getCreateDate()));
 		endRow(ticketHeaderBuilder);
 
-		beginRow(ticketHeaderBuilder);
+		/*beginRow(ticketHeaderBuilder);
 		addColumn(ticketHeaderBuilder, ""); //$NON-NLS-1$
-		endRow(ticketHeaderBuilder);
+		endRow(ticketHeaderBuilder);*/
 
 		User driver = ticket.getAssignedDriver();
 		if (driver != null) {
@@ -617,9 +620,9 @@ public class ReceiptPrintService {
 				endRow(ticketHeaderBuilder);
 			}
 
-			beginRow(ticketHeaderBuilder);
+			/*beginRow(ticketHeaderBuilder);
 			addColumn(ticketHeaderBuilder, ""); //$NON-NLS-1$
-			endRow(ticketHeaderBuilder);
+			endRow(ticketHeaderBuilder);*/
 		}
 
 		//customer info section
