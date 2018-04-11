@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project name="maven-antrun-" default="main"  >
 <target name="main">
-  <zip basedir="C:\Users\Arindam\git\FloreantPOS\target/floreantpos-bin/floreantpos" destfile="C:\Users\Arindam\git\FloreantPOS\target/floreantpos-1.4-build${buildNumber}.zip"></zip>
+  <echo message="prepare phase"/>
+  <unzip src="database/derby-server/posdb.zip" dest="C:\Users\Arindam\git\FloreantPOS\target"/>
 </target>
 </project>

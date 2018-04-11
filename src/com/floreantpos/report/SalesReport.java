@@ -30,7 +30,8 @@ import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.data.JRTableModelDataSource;
-import net.sf.jasperreports.view.JasperViewer;
+//import net.sf.jasperreports.view.JasperViewer;
+import net.sf.jasperreports.swing.JRViewer;
 
 import org.jdesktop.swingx.calendar.DateUtils;
 
@@ -83,7 +84,7 @@ public class SalesReport extends Report {
 		JasperReport masterReport = ReportUtil.getReport("sales_report"); //$NON-NLS-1$
 
 		JasperPrint print = JasperFillManager.fillReport(masterReport, map, new JREmptyDataSource());
-		viewer = new JasperViewer(print);
+		viewer = new JRViewer(print);
 	}
 
 	@Override

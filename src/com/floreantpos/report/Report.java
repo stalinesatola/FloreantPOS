@@ -19,7 +19,8 @@ package com.floreantpos.report;
 
 import java.util.Date;
 
-import net.sf.jasperreports.view.JasperViewer;
+//import net.sf.jasperreports.view.JasperViewer;
+import net.sf.jasperreports.swing.JRViewer;
 
 import com.floreantpos.model.Terminal;
 import com.floreantpos.model.UserType;
@@ -34,7 +35,7 @@ public abstract class Report {
 	private UserType userType; 
 	private int reportType = REPORT_TYPE_1;
 	private boolean includeFreeItem = false;
-	protected JasperViewer viewer;
+	protected JRViewer viewer;
 
 	public abstract void refresh() throws Exception;
 
@@ -42,7 +43,7 @@ public abstract class Report {
 
 	public abstract boolean isTypeSupported();
 
-	public JasperViewer getViewer() {
+	public JRViewer getViewer() {
 		return viewer;
 	}
 
