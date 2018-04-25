@@ -41,6 +41,7 @@ import com.floreantpos.Messages;
 import com.floreantpos.actions.AboutAction;
 import com.floreantpos.actions.UpdateAction;
 import com.floreantpos.bo.actions.AttendanceHistoryAction;
+import com.floreantpos.bo.actions.BillingReportAction;
 import com.floreantpos.bo.actions.CategoryExplorerAction;
 import com.floreantpos.bo.actions.ConfigureRestaurantAction;
 import com.floreantpos.bo.actions.CookingInstructionExplorerAction;
@@ -193,6 +194,7 @@ public class BackOfficeWindow extends javax.swing.JFrame {
 
 	private void createReportMenu(JMenuBar menuBar) {
 		JMenu reportMenu = new JMenu(com.floreantpos.POSConstants.REPORTS);
+		reportMenu.add(new BillingReportAction());
 		reportMenu.add(new SalesReportAction());
 		reportMenu.add(new OpenTicketSummaryReportAction());
 		reportMenu.add(new HourlyLaborReportAction());
