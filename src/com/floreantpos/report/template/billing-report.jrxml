@@ -164,7 +164,7 @@
 				<text><![CDATA[Ticket ID]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-5" x="74" y="6" width="86" height="15" uuid="7e481c93-7d3e-4dac-b713-3ea4ec7423d9"/>
+				<reportElement key="staticText-5" x="63" y="6" width="107" height="15" uuid="7e481c93-7d3e-4dac-b713-3ea4ec7423d9"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -239,7 +239,7 @@
 	<detail>
 		<band height="28" splitType="Stretch">
 			<textField isBlankWhenNull="true">
-				<reportElement key="textField-7" x="74" y="2" width="86" height="15" uuid="9105d0ed-f63d-46a3-a3f4-f8f901fd5adc"/>
+				<reportElement key="textField-7" x="63" y="2" width="107" height="15" uuid="9105d0ed-f63d-46a3-a3f4-f8f901fd5adc"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -498,7 +498,7 @@
 				<text><![CDATA[Total Amount Received]]></text>
 			</staticText>
 			<textField isBlankWhenNull="true">
-				<reportElement key="textField-14" x="454" y="66" width="84" height="15" uuid="781c73da-a5c7-45e4-9929-0229890d8b15"/>
+				<reportElement key="textField-14" x="454" y="66" width="82" height="15" uuid="781c73da-a5c7-45e4-9929-0229890d8b15"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>

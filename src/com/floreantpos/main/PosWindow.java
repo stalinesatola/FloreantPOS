@@ -40,6 +40,7 @@ import javax.swing.JSeparator;
 import javax.swing.Timer;
 
 import com.floreantpos.IconFactory;
+import com.floreantpos.Messages;
 import com.floreantpos.actions.ShutDownAction;
 import com.floreantpos.config.AppConfig;
 import com.floreantpos.config.TerminalConfig;
@@ -104,7 +105,7 @@ public class PosWindow extends JFrame implements WindowListener {
 		statusBarContainer.add(new JSeparator(JSeparator.HORIZONTAL), BorderLayout.NORTH);
 		ImageIcon icon = IconFactory.getIcon("/images/", "logo-icon.png");
 		statusLabel.setIcon(icon);
-		statusLabel.setText("Floreant POS by OROCUBE LLC.");
+		statusLabel.setText(Messages.getString("Application.42"));
 		statusBarContainer.add(infoPanel, BorderLayout.CENTER);
 		getContentPane().add(statusBarContainer, BorderLayout.SOUTH);
 		clockTimer.start();
@@ -116,7 +117,7 @@ public class PosWindow extends JFrame implements WindowListener {
 			welcomeHeaderPanel = null;
 			return;
 		}
-		JLabel titleLabel = new JLabel(IconFactory.getIcon("/ui_icons/", "title.png")); //$NON-NLS-1$ //$NON-NLS-2$
+		JLabel titleLabel = new JLabel(IconFactory.getIcon("/ui_icons/", "title-Eulophia.png")); //$NON-NLS-1$ //$NON-NLS-2$
 		titleLabel.setOpaque(true);
 		titleLabel.setBackground(Color.WHITE);
 

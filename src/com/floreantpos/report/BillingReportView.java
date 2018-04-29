@@ -98,18 +98,20 @@ public class BillingReportView extends JPanel {
 		double totalSgst = 0;
 		double totalTax = 0;
 		double totalAmount = 0;
-		for (Ticket ticket : tickets) {
-			++ticketCount;
-			for(final TicketTax ticketTax: ticket.getTicketTaxes() ){
-				String ticketTaxName = ticketTax.getName();
-				if ( ticketTaxName.equals("SGST"))
-					totalSgst = totalSgst + ticketTax.getAmount();
-				else if (ticketTaxName.equals("CGST"))
-					totalCgst = totalCgst + ticketTax.getAmount();
-				}
-			totalAmount = totalAmount + ticket.getPaidAmount();
+		if (tickets.size()>0){
+			for (Ticket ticket : tickets) {
+				++ticketCount;
+				for(final TicketTax ticketTax: ticket.getTicketTaxes() ){
+					String ticketTaxName = ticketTax.getName();
+					if ( ticketTaxName.equals("SGST"))
+						totalSgst = totalSgst + ticketTax.getAmount();
+					else if (ticketTaxName.equals("CGST"))
+						totalCgst = totalCgst + ticketTax.getAmount();
+					}
+				totalAmount = totalAmount + ticket.getPaidAmount();
+			}
 		}
-		totalTax = totalTax + totalCgst;
+		totalTax = totalSgst + totalCgst;
 		HashMap map = new HashMap();
 		ReportUtil.populateRestaurantProperties(map);
 		map.put("reportTitle", Messages.getString("BillingReport.1")); //$NON-NLS-1$ //$NON-NLS-2$
