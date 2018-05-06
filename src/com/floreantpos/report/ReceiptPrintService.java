@@ -300,7 +300,7 @@ public class ReceiptPrintService {
 			if (transaction != null && transaction.isCard()) {
 				CardReader cardReader = CardReader.fromString(transaction.getCardReader());
 
-				if (cardReader == CardReader.EXTERNAL_TERMINAL) {
+				if (cardReader == CardReader.EXTERNAL_TERMINAL||cardReader == CardReader.MSWIPE) {
 					return;
 				}
 
@@ -538,8 +538,8 @@ public class ReceiptPrintService {
 	}
 
 	private static String getCardInformation(PosTransaction transaction) {
-		String string = "<br/>CARD INFO: ------------------------";
-		string += "<br/>PROCESS: " + transaction.getCardReader();
+		String string = "<br/>Electronic Payment Info:";
+		string += "<br/>PROCESS: " + transaction.getCardReader() + "<br/>Check your phone SMS for charge slip";
 		string += "<br/> TYPE: " + transaction.getCardType();
 		try {
 			String cardNumber = transaction.getCardNumber();

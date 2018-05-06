@@ -25,7 +25,8 @@ public enum CardReader {
 	PAX("PAX"), //$NON-NLS-1$
 	SWIPE(Messages.getString("CardReader.0")), //$NON-NLS-1$
 	MANUAL(Messages.getString("CardReader.1")), //$NON-NLS-1$
-	EXTERNAL_TERMINAL(Messages.getString("CardReader.2")); //$NON-NLS-1$
+	EXTERNAL_TERMINAL(Messages.getString("CardReader.2")), //$NON-NLS-1$
+	MSWIPE(Messages.getString("CardReader.3"));
 	
 	private String type;
 	

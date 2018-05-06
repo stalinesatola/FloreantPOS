@@ -398,6 +398,12 @@ public class SettleTicketProcessor implements CardInputListener {
 					authorizationCodeDialog.pack();
 					authorizationCodeDialog.open();
 					break;
+					
+				case MSWIPE:
+					AuthorizationCodeDialog authCodeDialog = new AuthorizationCodeDialog(this);
+					authCodeDialog.pack();
+					authCodeDialog.open();
+					break;
 
 				default:
 					break;
@@ -569,7 +575,7 @@ public class SettleTicketProcessor implements CardInputListener {
 
 				selectedTransaction.setCardType(selectedPaymentType.getDisplayString());
 				selectedTransaction.setCaptured(true);
-				selectedTransaction.setCardReader(CardReader.EXTERNAL_TERMINAL.name());
+				selectedTransaction.setCardReader(CardReader.MSWIPE.name());
 				selectedTransaction.setCardAuthCode(authorizationCode);
 				setTransactionAmounts(selectedTransaction);
 
