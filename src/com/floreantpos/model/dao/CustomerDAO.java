@@ -74,6 +74,7 @@ public class CustomerDAO extends BaseCustomerDAO {
 			Disjunction disjunction = Restrictions.disjunction();
 			disjunction.add(Restrictions.ilike(Customer.PROP_MOBILE_NO, "%" + searchString + "%"));
 			disjunction.add(Restrictions.ilike(Customer.PROP_NAME, "%" + searchString + "%"));
+			disjunction.add(Restrictions.ilike(Customer.PROP_ROOM_NO, "%" + searchString + "%"));
 
 			criteria.add(disjunction);
 

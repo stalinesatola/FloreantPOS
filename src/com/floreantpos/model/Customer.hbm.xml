@@ -18,7 +18,7 @@
 		<property name="salutation" column="SALUTATION" length="60" type="string" />
 		<property name="firstName" column="FIRST_NAME" length="60" type="string" />
 		<property name="lastName" column="LAST_NAME" length="60" type="string" />
-		<property name="name" column="name" length="120" type="string" />
+		<property name="name" column="NAME" length="120" type="string" />
 		<property name="dob" column="DOB" length="16" type="string" />
 		<property name="ssn" column="SSN" length="30" type="string" />
 		<property name="address" column="ADDRESS" length="220" type="string" />
@@ -31,6 +31,7 @@
 		<property name="creditSpent" column="CREDIT_SPENT" type="java.lang.Double" />
 		<property name="creditCardNo" column="CREDIT_CARD_NO" length="30" type="string" />
 		<property name="note" column="NOTE" length="255" type="string" />
+		<property name="roomNo" column="ROOM_NO" length="255" type="string" />
 		
 		<bag cascade="all,delete-orphan" inverse="true" lazy="false" name="deliveryAddresses" table="DELIVERY_ADDRESS">
 			<key>

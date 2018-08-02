@@ -1000,7 +1000,6 @@ public class OrderView extends ViewPanel implements PaymentListener, TicketEditL
 			OrderType newOrderType = newTicket.getOrderType();
 			changeViewForOrderType(newOrderType);
 		}
-
 		this.currentTicket = newTicket;
 		ticketView.setTicket(newTicket);
 		if (paymentView != null) {
@@ -1011,7 +1010,11 @@ public class OrderView extends ViewPanel implements PaymentListener, TicketEditL
 	}
 
 	public void updateView() {
-		btnCustomer.setText(POSConstants.CUSTOMER_SELECTION_BUTTON_TEXT);
+		if (currentTicket != null && this.currentTicket.getProperty(Ticket.CUSTOMER_NAME)!=null &&
+				this.currentTicket.getProperty(Ticket.CUSTOMER_NAME).length()>0)
+			btnCustomer.setText("<html><body><center>CUSTOMER<br>\"" + this.currentTicket.getProperty(Ticket.CUSTOMER_NAME) + "\"</center></body></html>");
+		else
+			btnCustomer.setText(POSConstants.CUSTOMER_SELECTION_BUTTON_TEXT);
 		if (currentTicket != null) {
 			OrderType type = currentTicket.getOrderType();
 			if (type.isRetailOrder()) {

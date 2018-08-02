@@ -40,6 +40,7 @@ public abstract class BaseCustomer  implements Comparable, Serializable {
 	public static String PROP_CREDIT_CARD_NO = "creditCardNo";
 	public static String PROP_CREDIT_LIMIT = "creditLimit";
 	public static String PROP_LOYALTY_NO = "loyaltyNo";
+	public static String PROP_ROOM_NO = "roomNo";
 
 
 	// constructors
@@ -89,6 +90,7 @@ public abstract class BaseCustomer  implements Comparable, Serializable {
 		protected java.lang.Double creditSpent;
 		protected java.lang.String creditCardNo;
 		protected java.lang.String note;
+		protected java.lang.String roomNo;
 
 	// collections
 	private java.util.List<com.floreantpos.model.DeliveryAddress> deliveryAddresses;
@@ -526,6 +528,13 @@ public abstract class BaseCustomer  implements Comparable, Serializable {
 	}
 
 
+	public java.lang.String getRoomNo() {
+		return roomNo;
+	}
+
+	public void setRoomNo(java.lang.String roomNo) {
+		this.roomNo = roomNo;
+	}
 
 	/**
 	 * Return the value associated with the column: deliveryAddresses

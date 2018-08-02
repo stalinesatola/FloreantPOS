@@ -57,6 +57,7 @@ import com.floreantpos.util.POSUtil;
 public class QuickCustomerForm extends BeanEditor<Customer> {
 	static MyOwnFocusTraversalPolicy newPolicy;
 	private JTextArea tfAddress;
+	private FixedLengthTextField tfRoomNo;
 	private FixedLengthTextField tfCity;
 	private FixedLengthTextField tfZip;
 	private FixedLengthTextField tfFirstName;
@@ -99,11 +100,16 @@ public class QuickCustomerForm extends BeanEditor<Customer> {
 		JLabel lblState = new JLabel(Messages.getString("QuickCustomerForm.0")); //$NON-NLS-1$
 		tfState = new JTextField(30);
 
+		JLabel lblRoomNo = new JLabel(Messages.getString("CustomerForm.33"));
+		inputPanel.add(lblRoomNo, "cell 0 1,alignx right"); //$NON-NLS-1$
+		tfRoomNo = new FixedLengthTextField(30);
+		inputPanel.add(tfRoomNo, "cell 1 1");
+		
 		JLabel lblCellPhone = new JLabel(Messages.getString("CustomerForm.32")); //$NON-NLS-1$
 
-		inputPanel.add(lblCellPhone, "cell 0 1,alignx right"); //$NON-NLS-1$
+		inputPanel.add(lblCellPhone, "cell 0 2,alignx right"); //$NON-NLS-1$
 		tfCellPhone = new JTextField(30);
-		inputPanel.add(tfCellPhone, "cell 1 1"); //$NON-NLS-1$
+		inputPanel.add(tfCellPhone, "cell 1 2"); //$NON-NLS-1$
 		//setPreferredSize(PosUIManager.getSize(800, 350));
 
 		JLabel lblFirstName = new JLabel(Messages.getString("CustomerForm.3")); //$NON-NLS-1$
@@ -120,19 +126,19 @@ public class QuickCustomerForm extends BeanEditor<Customer> {
 
 		JLabel lblName = new JLabel("Name"); //$NON-NLS-1$
 
-		inputPanel.add(lblName, "cell 0 3,alignx right"); //$NON-NLS-1$
+		inputPanel.add(lblName, "cell 0 4,alignx right"); //$NON-NLS-1$
 		tfName = new FixedLengthTextField();
 		tfName.setLength(120);
-		inputPanel.add(tfName, "cell 1 3"); //$NON-NLS-1$
+		inputPanel.add(tfName, "cell 1 4"); //$NON-NLS-1$
 
-		inputPanel.add(lblZip, "cell 0 4,right"); //$NON-NLS-1$
-		inputPanel.add(tfZip, "cell 1 4"); //$NON-NLS-1$
+		inputPanel.add(lblZip, "cell 0 5,right"); //$NON-NLS-1$
+		inputPanel.add(tfZip, "cell 1 5"); //$NON-NLS-1$
 
-		inputPanel.add(lblCitytown, "cell 0 5,right"); //$NON-NLS-1$
-		inputPanel.add(tfCity, "cell 1 5"); //$NON-NLS-1$
+		inputPanel.add(lblCitytown, "cell 0 6,right"); //$NON-NLS-1$
+		inputPanel.add(tfCity, "cell 1 6"); //$NON-NLS-1$
 
-		inputPanel.add(lblState, "cell 0 6,right"); //$NON-NLS-1$
-		inputPanel.add(tfState, "cell 1 6"); //$NON-NLS-1$
+		inputPanel.add(lblState, "cell 0 7,right"); //$NON-NLS-1$
+		inputPanel.add(tfState, "cell 1 7"); //$NON-NLS-1$
 
 		inputPanel.add(lblAddress, "cell 2 1 1 6,right"); //$NON-NLS-1$
 		inputPanel.add(scrlDescription, "grow, cell 3 1 1 6"); //$NON-NLS-1$
@@ -172,7 +178,7 @@ public class QuickCustomerForm extends BeanEditor<Customer> {
 
 	public void callOrderController() {
 		Vector<Component> order = new Vector<Component>();
-
+		order.add(tfRoomNo);
 		order.add(tfCellPhone);
 		order.add(tfName);
 		//order.add(tfFirstName);
@@ -196,6 +202,7 @@ public class QuickCustomerForm extends BeanEditor<Customer> {
 		tfCity.setEnabled(enable);
 		tfZip.setEnabled(enable);
 		tfCellPhone.setEnabled(enable);
+		tfRoomNo.setEnabled(enable);
 	}
 
 	@Override
@@ -217,6 +224,7 @@ public class QuickCustomerForm extends BeanEditor<Customer> {
 		tfCity.setEditable(editable);
 		tfZip.setEditable(editable);
 		tfCellPhone.setEditable(editable);
+		tfRoomNo.setEditable(editable);
 	}
 
 	@Override
@@ -229,6 +237,7 @@ public class QuickCustomerForm extends BeanEditor<Customer> {
 		tfCity.setText(""); //$NON-NLS-1$
 		tfZip.setText(""); //$NON-NLS-1$
 		tfCellPhone.setText("");//$NON-NLS-1$
+		tfRoomNo.setText("");
 	}
 
 	@Override
@@ -263,6 +272,7 @@ public class QuickCustomerForm extends BeanEditor<Customer> {
 		tfZip.setText(customer.getZipCode());
 		//tfCellPhone.setText(customer.getMobileNo());
 		tfAddress.setText(customer.getAddress());
+		tfRoomNo.setText(customer.getRoomNo());
 	}
 
 	@Override
@@ -293,6 +303,7 @@ public class QuickCustomerForm extends BeanEditor<Customer> {
 		//TODO: 
 		customer.setZipCode(tfZip.getText());
 		customer.setMobileNo(tfCellPhone.getText());
+		customer.setRoomNo(tfRoomNo.getText());
 
 		return true;
 	}
