@@ -433,8 +433,8 @@ public class TicketListView extends JPanel implements ITicketList {
 	private class TicketListTableModel extends PaginatedTableModel {
 		public TicketListTableModel() {
 			super(new String[] { POSConstants.TICKET_LIST_COLUMN_ID, POSConstants.TICKET_LIST_COLUMN_TABLE, POSConstants.TICKET_LIST_COLUMN_SERVER,
-					POSConstants.TICKET_LIST_COLUMN_CREATE_DATE, POSConstants.TICKET_LIST_COLUMN_CUSTOMER, POSConstants.TICKET_LIST_COLUMN_DELIVERY_ADDRESS,
-					POSConstants.TICKET_LIST_COLUMN_DELIVERY_DATE, POSConstants.TICKET_LIST_COLUMN_TICKET_TYPE, POSConstants.TICKET_LIST_COLUMN_STATUS,
+					POSConstants.TICKET_LIST_COLUMN_CREATE_DATE, POSConstants.TICKET_LIST_COLUMN_CUSTOMER, POSConstants.TICKET_LIST_COLUMN_PHONE_NO,
+					POSConstants.TICKET_LIST_COLUMN_ROOM_NO, POSConstants.TICKET_LIST_COLUMN_TICKET_TYPE, POSConstants.TICKET_LIST_COLUMN_STATUS,
 					POSConstants.TICKET_LIST_COLUMN_TOTAL, POSConstants.TICKET_LIST_COLUMN_DUE });
 
 		}
@@ -463,21 +463,27 @@ public class TicketListView extends JPanel implements ITicketList {
 						return customerName;
 					}
 
-					String customerMobile = ticket.getProperty(Ticket.CUSTOMER_MOBILE);
-
-					if (customerMobile != null) {
-						return customerMobile;
-					}
-
 					return Messages.getString("TicketListView.6"); //$NON-NLS-1$
 
 				case 5:
 
-					return ticket.getDeliveryAddress();
+					//return ticket.getDeliveryAddress();
+					String customerMobile = ticket.getProperty(Ticket.CUSTOMER_MOBILE);
+
+					if (customerMobile != null && (customerMobile.trim()).length() > 0 ) {
+						return customerMobile;
+					}
+					return "";
 
 				case 6:
+					String customerRoomNo = ticket.getProperty(Ticket.CUSTOMER_ROOM);
 
-					return ticket.getDeliveryDate();
+					if (customerRoomNo != null) {
+						return customerRoomNo;
+					}
+					return "";
+
+					//return ticket.getDeliveryDate();
 
 				case 7:
 					return ticket.getOrderType();
