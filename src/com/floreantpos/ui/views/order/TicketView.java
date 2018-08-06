@@ -163,8 +163,8 @@ public class TicketView extends JPanel {
 					return;
 				}
 
-				if (!addMenuItemByBarcode(txtSearchItem.getText())) {
-					addMenuItemByItemId(txtSearchItem.getText());
+				if (!addMenuItemByName(txtSearchItem.getText()) && !addMenuItemByItemId(txtSearchItem.getText())) {
+					addMenuItemByBarcode(txtSearchItem.getText());
 				}
 				txtSearchItem.setText("");
 			}
@@ -235,6 +235,28 @@ public class TicketView extends JPanel {
 		MenuItemDAO dao = new MenuItemDAO();
 
 		MenuItem menuItem = dao.getMenuItemByBarcode(barcode);
+
+		if (menuItem == null) {
+			return false;
+		}
+
+		if (!filterByOrderType(menuItem)) {
+			return false;
+		}
+
+		if (!filterByStockAmount(menuItem)) {
+			return false;
+		}
+
+		OrderView.getInstance().getOrderController().itemSelected(menuItem);
+		return true;
+	}
+	
+	private boolean addMenuItemByName(String name) {
+
+		MenuItemDAO dao = new MenuItemDAO();
+
+		MenuItem menuItem = dao.getMenuItemByName(name);
 
 		if (menuItem == null) {
 			return false;

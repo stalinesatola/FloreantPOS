@@ -48,6 +48,7 @@ public class RestaurantConfigurationView extends ConfigurationView {
 	private POSTextField tfServiceCharge;
 	private POSTextField tfDefaultGratuity;
 	private POSTextField tfTicketFooter;
+	private POSTextField tfGstNo;
 	private JTextField tfZipCode;
 
 	public RestaurantConfigurationView() {
@@ -136,6 +137,12 @@ public class RestaurantConfigurationView extends ConfigurationView {
 
 		tfTicketFooter = new POSTextField();
 		contentPanel.add(tfTicketFooter, "cell 1 14 3 1,growx"); //$NON-NLS-1$
+		
+		JLabel lblGstNo = new JLabel(Messages.getString("RestaurantConfigurationView.8") + ":"); //$NON-NLS-1$ //$NON-NLS-2$
+		contentPanel.add(lblGstNo, "cell 0 20,alignx trailing"); //$NON-NLS-1$
+
+		tfGstNo = new POSTextField();
+		contentPanel.add(tfGstNo, "cell 1 20, growx"); //$NON-NLS-1$
 
 		JScrollPane scrollPane = new JScrollPane(contentPanel);
 		scrollPane.setBorder(null);
@@ -155,6 +162,7 @@ public class RestaurantConfigurationView extends ConfigurationView {
 		String telephone = null;
 		String currencyName = null;
 		String currencySymbol = null;
+		String gstNo= null;
 
 		int capacity = 0;
 		int tables = 0;
@@ -166,6 +174,7 @@ public class RestaurantConfigurationView extends ConfigurationView {
 		addr2 = tfAddressLine2.getText();
 		addr3 = tfAddressLine3.getText();
 		telephone = tfTelephone.getText();
+		gstNo= tfGstNo.getText();
 		//currencyName = tfCurrencyName.getText();
 		//currencySymbol = tfCurrencySymbol.getText();
 
@@ -194,6 +203,7 @@ public class RestaurantConfigurationView extends ConfigurationView {
 		restaurant.setAddressLine3(addr3);
 		restaurant.setZipCode(tfZipCode.getText());
 		restaurant.setTelephone(telephone);
+		restaurant.setGstNo(gstNo);
 		restaurant.setCapacity(capacity);
 		restaurant.setTables(tables);
 		restaurant.setCurrencyName(currencyName);
@@ -220,6 +230,7 @@ public class RestaurantConfigurationView extends ConfigurationView {
 		tfAddressLine3.setText(restaurant.getAddressLine3());
 		tfZipCode.setText(restaurant.getZipCode());
 		tfTelephone.setText(restaurant.getTelephone());
+		tfGstNo.setText(restaurant.getGstNo());
 		//tfCurrencyName.setText(restaurant.getCurrencyName());
 		//tfCurrencySymbol.setText(restaurant.getCurrencySymbol());
 		tfServiceCharge.setText(String.valueOf(restaurant.getServiceChargePercentage()));

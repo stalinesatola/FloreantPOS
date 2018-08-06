@@ -28,6 +28,7 @@ import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 
 import com.floreantpos.model.CreditCardTransaction;
+import com.floreantpos.model.PaymentType;
 import com.floreantpos.model.PosTransaction;
 import com.floreantpos.model.Terminal;
 import com.floreantpos.model.TransactionType;
@@ -124,6 +125,32 @@ public class PosTransactionDAO extends BasePosTransactionDAO {
 			session = getSession();
 			Criteria criteria = session.createCriteria(transactionClass);
 			criteria.add(Restrictions.isNotNull(PosTransaction.PROP_TICKET));
+			if (from != null && to != null) {
+				criteria.add(Restrictions.ge(PosTransaction.PROP_TRANSACTION_TIME, from));
+				criteria.add(Restrictions.le(PosTransaction.PROP_TRANSACTION_TIME, to));
+			}
+			return criteria.list();
+		} finally {
+			closeSession(session);
+		}
+	}
+	
+	public List<PosTransaction> findCardTransactions(Date from, Date to) {
+		Session session = null;
+
+		try {
+			session = getSession();
+			Criteria criteria = session.createCriteria(PosTransaction.class);
+			criteria.add(Restrictions.isNotNull(PosTransaction.PROP_TICKET));
+			//criteria.add(Restrictions.isNotNull(PosTransaction.PROP_CARD_TYPE));
+			criteria.add(Restrictions.in(PosTransaction.PROP_PAYMENT_TYPE, 
+					new String[] {
+							PaymentType.CREDIT_VISA.getDisplayString(),
+							PaymentType.CREDIT_AMEX.getDisplayString(),
+							PaymentType.CREDIT_DISCOVERY.getDisplayString(),
+							PaymentType.CREDIT_MASTER_CARD.getDisplayString(),
+							PaymentType.DEBIT_VISA.getDisplayString(),
+							PaymentType.DEBIT_MASTER_CARD.getDisplayString()}));
 			if (from != null && to != null) {
 				criteria.add(Restrictions.ge(PosTransaction.PROP_TRANSACTION_TIME, from));
 				criteria.add(Restrictions.le(PosTransaction.PROP_TRANSACTION_TIME, to));

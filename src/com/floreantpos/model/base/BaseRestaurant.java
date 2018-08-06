@@ -32,6 +32,7 @@ public abstract class BaseRestaurant  implements Comparable, Serializable {
 	public static String PROP_ADDRESS_LINE2 = "addressLine2"; //$NON-NLS-1$
 	public static String PROP_ADDRESS_LINE3 = "addressLine3"; //$NON-NLS-1$
 	public static String PROP_CURRENCY_SYMBOL = "currencySymbol"; //$NON-NLS-1$
+	public static String PROP_GST_NO = "gstNo"; //$NON-NLS-1$
 
 
 	// constructors
@@ -64,6 +65,7 @@ public abstract class BaseRestaurant  implements Comparable, Serializable {
 		protected java.lang.String addressLine3;
 		protected java.lang.String zipCode;
 		protected java.lang.String telephone;
+		protected java.lang.String gstNo;
 		protected java.lang.Integer capacity;
 		protected java.lang.Integer tables;
 		protected java.lang.String currencyName;
@@ -367,10 +369,15 @@ public abstract class BaseRestaurant  implements Comparable, Serializable {
 	public void setAllowModifierMaxExceed (java.lang.Boolean allowModifierMaxExceed) {
 		this.allowModifierMaxExceed = allowModifierMaxExceed;
 	}
+	
+	
+	public java.lang.String getGstNo() {
+		return gstNo;
+	}
 
-
-
-
+	public void setGstNo(java.lang.String gstNo) {
+		this.gstNo = gstNo;
+	}
 
 	public boolean equals (Object obj) {
 		if (null == obj) return false;

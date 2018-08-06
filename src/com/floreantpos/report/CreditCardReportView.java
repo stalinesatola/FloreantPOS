@@ -41,7 +41,9 @@ import org.jdesktop.swingx.JXDatePicker;
 
 import com.floreantpos.Messages;
 import com.floreantpos.POSConstants;
+import com.floreantpos.model.CardTransaction;
 import com.floreantpos.model.CreditCardTransaction;
+import com.floreantpos.model.PosTransaction;
 import com.floreantpos.model.dao.PosTransactionDAO;
 import com.floreantpos.model.util.DateUtil;
 import com.floreantpos.report.service.ReportService;
@@ -104,12 +106,12 @@ public class CreditCardReportView extends JPanel {
 		
 		Date currentTime = new Date();
 		
-		List<CreditCardTransaction> transactions = (List<CreditCardTransaction>) PosTransactionDAO.getInstance().findTransactions(null, CreditCardTransaction.class, fromDate, toDate);
+		List<PosTransaction> transactions =  PosTransactionDAO.getInstance().findCardTransactions(fromDate, toDate);
 		
 		int saleCount = 0;
 		double totalSales = 0;
 		double totalTips = 0;
-		for (CreditCardTransaction transaction : transactions) {
+		for (PosTransaction transaction : transactions) {
 			++saleCount;
 			totalSales += transaction.getAmount();
 			totalTips += transaction.getTipsAmount();

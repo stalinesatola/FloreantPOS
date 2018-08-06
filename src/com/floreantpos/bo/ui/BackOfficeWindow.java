@@ -195,6 +195,7 @@ public class BackOfficeWindow extends javax.swing.JFrame {
 	private void createReportMenu(JMenuBar menuBar) {
 		JMenu reportMenu = new JMenu(com.floreantpos.POSConstants.REPORTS);
 		reportMenu.add(new BillingReportAction());
+		reportMenu.add(new CreditCardReportAction());
 		reportMenu.add(new SalesReportAction());
 		reportMenu.add(new OpenTicketSummaryReportAction());
 		reportMenu.add(new HourlyLaborReportAction());
@@ -202,7 +203,6 @@ public class BackOfficeWindow extends javax.swing.JFrame {
 		reportMenu.add(new EmployeeAttendanceAction());
 		reportMenu.add(new KeyStatisticsSalesReportAction());
 		reportMenu.add(new SalesAnalysisReportAction());
-		reportMenu.add(new CreditCardReportAction());
 		reportMenu.add(new CustomPaymentReportAction());
 		reportMenu.add(new MenuUsageReportAction());
 		reportMenu.add(new ServerProductivityReportAction());

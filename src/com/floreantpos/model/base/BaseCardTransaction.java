@@ -49,6 +49,20 @@ public abstract class BaseCardTransaction extends com.floreantpos.model.PosTrans
 	public BaseCardTransaction (java.lang.Integer id) {
 		super(id);
 	}
+	
+	/**
+	 * Constructor for required fields
+	 */
+	public BaseCardTransaction (
+		java.lang.Integer id,
+		java.lang.String transactionType,
+		java.lang.String paymentType) {
+
+		super (
+			id,
+			transactionType,
+			paymentType);
+	}
 
 
 

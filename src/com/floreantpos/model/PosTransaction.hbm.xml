@@ -8,6 +8,7 @@
 
 		<!-- this field will be renamed in future release -->
 		<discriminator column="PAYMENT_TYPE" length="30" type="string" />
+		<!-- <discriminator formula="case when PAYMENT_TYPE in ('CREDIT_CARD', 'DEBIT_CARD') then 'CARD' end" type="string"/> -->
 		<property name="globalId" column="GLOBAL_ID" length="16" type="string" unique="true"/>
 		<property column="TRANSACTION_TIME" length="10" name="transactionTime" type="java.util.Date" />
 		<property column="AMOUNT" length="52" name="amount" type="java.lang.Double" />
@@ -77,7 +78,7 @@
 		<many-to-one class="com.floreantpos.model.PayoutRecepient" lazy="false" name="recepient">
 			<column name="PAYOUT_RECEPIENT_ID" />
 		</many-to-one>
-
+		
 		<subclass discriminator-value="CASH" name="com.floreantpos.model.CashTransaction">
 		</subclass>
 
@@ -88,8 +89,10 @@
 		</subclass>
 
 		<subclass discriminator-value="CREDIT_CARD" name="com.floreantpos.model.CreditCardTransaction">
-
 		</subclass>
+		
+	<!-- 	<subclass discriminator-value="CARD" name="com.floreantpos.model.CardTransaction">
+		</subclass> -->
 
 		<subclass discriminator-value="DEBIT_CARD" name="com.floreantpos.model.DebitCardTransaction">
 		</subclass>
