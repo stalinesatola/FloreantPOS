@@ -90,6 +90,7 @@ public class ReceiptPrintService {
 	private static final String ADJUST_AMOUNT = "adjustAmount";
 	private static final String TAX_AMOUNT = "taxAmount"; //$NON-NLS-1$
 	private static final String DISCOUNT_AMOUNT = "discountAmount"; //$NON-NLS-1$
+	private static final String HEADER_LINE6 = "headerLine6"; //$NON-NLS-1$
 	private static final String HEADER_LINE5 = "headerLine5"; //$NON-NLS-1$
 	private static final String HEADER_LINE4 = "headerLine4"; //$NON-NLS-1$
 	private static final String HEADER_LINE3 = "headerLine3"; //$NON-NLS-1$
@@ -446,8 +447,9 @@ public class ReceiptPrintService {
 			map.put(HEADER_LINE1, restaurant.getName());
 			map.put(HEADER_LINE2, restaurant.getAddressLine1());
 			map.put(HEADER_LINE3, restaurant.getAddressLine2());
-			map.put(HEADER_LINE4, restaurant.getAddressLine3());
+			map.put(HEADER_LINE4, restaurant.getAddressLine3() + " - " + restaurant.getZipCode());
 			map.put(HEADER_LINE5, restaurant.getTelephone());
+			map.put(HEADER_LINE6, "GSTIN - " + restaurant.getGstNo());
 		}
 
 		if (printProperties.isShowFooter()) {
@@ -630,6 +632,7 @@ public class ReceiptPrintService {
 
 			String customerName = ticket.getProperty(Ticket.CUSTOMER_NAME);
 			String customerMobile = ticket.getProperty(Ticket.CUSTOMER_MOBILE);
+			String customerRoomNo = ticket.getProperty(Ticket.CUSTOMER_ROOM);
 
 			if (StringUtils.isNotEmpty(customerName)) {
 				beginRow(ticketHeaderBuilder);
@@ -638,7 +641,13 @@ public class ReceiptPrintService {
 
 				if (StringUtils.isNotEmpty(customerName)) {
 					beginRow(ticketHeaderBuilder);
-					addColumn(ticketHeaderBuilder, customerName);
+					addColumn(ticketHeaderBuilder, "Name: " + customerName);
+					endRow(ticketHeaderBuilder);
+				}
+				
+				if (StringUtils.isNotEmpty(customerRoomNo)) {
+					beginRow(ticketHeaderBuilder);
+					addColumn(ticketHeaderBuilder, "Room No: " + customerRoomNo);
 					endRow(ticketHeaderBuilder);
 				}
 
@@ -653,11 +662,11 @@ public class ReceiptPrintService {
 						endRow(ticketHeaderBuilder);
 					}
 				}
-				else {
+				/*else {
 					beginRow(ticketHeaderBuilder);
 					addColumn(ticketHeaderBuilder, Messages.getString("ReceiptPrintService.111")); //$NON-NLS-1$
 					endRow(ticketHeaderBuilder);
-				}
+				}*/
 
 				if (StringUtils.isNotEmpty(customerMobile)) {
 					beginRow(ticketHeaderBuilder);

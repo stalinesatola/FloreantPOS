@@ -100,6 +100,7 @@ public class Ticket extends BaseTicket {
 
 	public static final String CUSTOMER_MOBILE = "CUSTOMER_MOBILE"; //$NON-NLS-1$
 	public static final String CUSTOMER_NAME = "CUSTOMER_NAME"; //$NON-NLS-1$
+	public static final String CUSTOMER_ROOM = "CUSTOMER_ROOM"; //$NON-NLS-1$
 	public static final String CUSTOMER_ID = "CUSTOMER_ID"; //$NON-NLS-1$
 	public static final String CUSTOMER_ZIP_CODE = "CUSTOMER_ZIP_CODE"; //$NON-NLS-1$
 	public static final String MANAGER_INSTRUCTION = "MANAGER_INSTRUCTION"; //$NON-NLS-1$
@@ -756,6 +757,7 @@ public class Ticket extends BaseTicket {
 			addProperty(Ticket.CUSTOMER_ID, String.valueOf(customer.getAutoId()));
 			addProperty(Ticket.CUSTOMER_NAME, customer.getFirstName());
 			addProperty(Ticket.CUSTOMER_MOBILE, customer.getMobileNo());
+			addProperty(Ticket.CUSTOMER_ROOM,customer.getRoomNo());
 			addProperty(Ticket.CUSTOMER_ZIP_CODE, customer.getZipCode());
 		}
 		if (customer != null) {

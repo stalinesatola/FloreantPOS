@@ -20,21 +20,23 @@ package com.floreantpos.report;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
+import com.floreantpos.model.CardTransaction;
 import com.floreantpos.model.CreditCardTransaction;
+import com.floreantpos.model.PosTransaction;
 import com.floreantpos.swing.ListTableModel;
 import com.floreantpos.util.NumberUtil;
 
-public class CardReportModel extends ListTableModel<CreditCardTransaction> {
+public class CardReportModel extends ListTableModel<PosTransaction> {
 
 	final String DATE_FORMAT = "dd-MM-yyyy";
 
-	public CardReportModel(List<CreditCardTransaction> datas) {
+	public CardReportModel(List<PosTransaction> datas) {
 		super(new String[] { "ticketId", "cardType", "date", "server", "authCode", "tips", "total" }, datas); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$
 	}
 
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
-		CreditCardTransaction transaction = getRowData(rowIndex);
+	PosTransaction transaction = getRowData(rowIndex);
 
 		switch (columnIndex) {
 			case 0:
