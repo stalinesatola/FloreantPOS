@@ -21,6 +21,7 @@
 				<directory>src</directory>
 				<excludes>
 					<exclude>**/*.java</exclude>
+					<exclude>/target/*.*</exclude>
 				</excludes>
 			</resource>
 			<resource>
@@ -48,8 +49,9 @@
 					</execution>
 				</executions>
 				<configuration>
-					<doCheck>true</doCheck>
+					<doCheck>false</doCheck>
 					<doUpdate>true</doUpdate>
+					<shortRevisionLength>5</shortRevisionLength>
 					<!-- <providerImplementations>
 						<svn>javasvn</svn>
 					</providerImplementations> -->
@@ -142,7 +144,7 @@
 						<phase>package</phase>
 						<configuration>
 							<target>
-								<zip destfile="${project.build.directory}/${project.build.finalName}-1.4-build${buildNumber}.zip" basedir="${project.build.directory}/${project.build.finalName}-bin/${project.build.finalName}"></zip>
+								<zip destfile="${project.build.directory}/${project.build.finalName}-1.4-build-${buildNumber}.zip" basedir="${project.build.directory}/${project.build.finalName}-bin/${project.build.finalName}"></zip>
 							</target>
 						</configuration>
 						<goals>
