@@ -306,16 +306,17 @@ public class DefaultTableSelectionView extends TableSelector implements ActionLi
 			}
 			return;
 		}
-		if (shopTable.isServing() && !btnGroup.isSelected()) {
+		/*if (shopTable.isServing() && !btnGroup.isSelected()) {
 			if (!button.hasUserAccess()) {
 				return;
 			}
 			if (isCreateNewTicket()) {
-				editTicket(button.getTicket());
+				doCreateNewTicket();
+				//editTicket(button.getTicket());
 				closeDialog(false);
 			}
 			return;
-		}
+		}*/
 
 		if (!btnGroup.isSelected() && !btnGroup.isSelected()) {
 			addedTableListModel.clear();

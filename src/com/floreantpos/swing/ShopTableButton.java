@@ -141,7 +141,7 @@ public class ShopTableButton extends PosButton {
 	public boolean hasUserAccess() {
 		User user = getUser();
 		if (user == null) {
-			return false;
+			return true;
 		}
 		User currentUser = Application.getCurrentUser();
 

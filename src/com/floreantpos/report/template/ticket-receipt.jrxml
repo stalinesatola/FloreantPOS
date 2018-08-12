@@ -369,9 +369,9 @@
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="25" splitType="Stretch">
+		<band height="19" splitType="Stretch">
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField" x="0" y="6" width="124" height="12" isRemoveLineWhenBlank="true" uuid="e7f7ea23-645e-451f-9db7-68310e2c5cd9"/>
+				<reportElement key="textField" x="0" y="5" width="124" height="12" isRemoveLineWhenBlank="true" uuid="e7f7ea23-645e-451f-9db7-68310e2c5cd9"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -384,7 +384,7 @@
 				<textFieldExpression><![CDATA[$F{itemName}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField" x="148" y="6" width="50" height="12" isRemoveLineWhenBlank="true" uuid="a73bbca1-d295-4bfb-a4f3-41ee298155a5">
+				<reportElement key="textField" x="148" y="5" width="50" height="12" isRemoveLineWhenBlank="true" uuid="a73bbca1-d295-4bfb-a4f3-41ee298155a5">
 					<printWhenExpression><![CDATA[$P{showSubtotal}==true]]></printWhenExpression>
 				</reportElement>
 				<box>
@@ -399,7 +399,7 @@
 				<textFieldExpression><![CDATA[$F{itemSubtotal}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement key="textField" x="126" y="6" width="20" height="12" uuid="be36dc70-5ced-4d20-9a87-f48bbf8f6b97"/>
+				<reportElement key="textField" x="126" y="5" width="20" height="12" uuid="be36dc70-5ced-4d20-9a87-f48bbf8f6b97"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
