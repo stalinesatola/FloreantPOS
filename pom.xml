@@ -9,7 +9,8 @@
 	</properties>
 
 	<scm>
-		<connection>scm:svn:http://svn.code.sf.net/p/floreantpos/code/trunk</connection>
+		<!-- <connection>scm:svn:http://svn.code.sf.net/p/floreantpos/code/trunk</connection> -->
+		<connection>scm:git:https://github.com/ArindamB007/FloreantPOS</connection>
 	</scm>
 
 	<build>
@@ -47,11 +48,11 @@
 					</execution>
 				</executions>
 				<configuration>
-					<doCheck>false</doCheck>
-					<doUpdate>false</doUpdate>
-					<providerImplementations>
+					<doCheck>true</doCheck>
+					<doUpdate>true</doUpdate>
+					<!-- <providerImplementations>
 						<svn>javasvn</svn>
-					</providerImplementations>
+					</providerImplementations> -->
 				</configuration>
 				<dependencies>
 					<dependency>
